@@ -1,0 +1,42 @@
+<html lang="pt-BR">
+<head>
+	<title>Search College</title>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/index.css">
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse menu">
+	    <div class="navbar-inner">
+	    	<a class="brand logo" href="{% url home %}"><i class="icon-search icone"></i> Search College</a>
+		    <ul class="nav pull-right">
+			    <li class="active"><a href="{% url home %}">Home</a></li>
+			    <li class="divider-vertical"></li>
+			    <li><a href="{% url busca %}">Busca</a></li>
+			    <li class="divider-vertical"></li>
+			    <li><a href="#">Quem somos</a></li>
+			    <li class="divider-vertical"></li>
+			    <li><a href="#">Contato</a></li>
+		    </ul>
+	    </div>
+    </div>
+    {% block conteudo %}{% endblock %}
+    <footer>
+    <div class="footer">
+       <div class="container narrow row-fluid">
+          <div class="span4">
+
+          </div>
+          <div class="span3">
+          	<p>Copyright Ukm Solutions. All rights reserved.</p>
+          </div>
+          <div class="span5">
+          </div>
+       </div>
+    </div>
+</footer>
+</body>
+</html>

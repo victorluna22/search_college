@@ -1,0 +1,47 @@
+
+.destaque {
+	background-image: url(/static/img/bg-header.jpg);
+	background-position: left;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.menu {
+	margin-bottom: 0px;
+}
+
+.titulo {
+	text-shadow: 0 1px 2px #000000;
+	font-size: 48px;
+    font-weight: 300;
+    color:white !important;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.logo {
+	font-family: 'Helvetica Nueve',Helvetica,sans-serif
+}
+
+.icone {
+	color:#999999;
+	margin-top: 4px;
+}
+
+.footer {
+	background: #1B1B1B;
+}
+
+#form-busca input[type=text],#form-busca input[type=email] {
+	height: 40px;
+	font-size:20px;
+}
+
+#form-busca label {
+	font-size: 20px;
+}
+
+.conteudo-form {
+	display: inline;
+	margin: 0 20%;
+}

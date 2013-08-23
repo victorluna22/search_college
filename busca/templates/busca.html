@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+
+	<div class="hero-unit" style="margin-bottom:0px">
+		<div class="page-header">
+	    	<h1>Example page header <small>Subtext for header</small></h1>
+	    </div>
+	    <form id="form-busca" class="form-horizontal">
+		<fieldset class="well conteudo-form">
+	    	<div class="control-group">
+			    <label class="control-label" for="inputUniversidade">Nome</label>
+			    <div class="controls">
+			    	<input type="text" class="span6" id="inputUniversidade" placeholder="Ex. Seu Nome">
+			    </div>
+			</div>
+			<div class="control-group">
+			    <label class="control-label" for="inputUniversidade">E-mail</label>
+			    <div class="controls">
+			    	<input type="email" class="span6" id="inputUniversidade" placeholder="Ex. test@exemplo.com">
+			    </div>
+			</div>
+		    <div class="control-group">
+			    <label class="control-label" for="inputUniversidade">Universidade</label>
+			    <div class="controls">
+			    	<input type="text" class="span6" id="inputUniversidade" placeholder="Ex. UFPE">
+			    	
+			    </div>
+			</div>
+		    <div class="control-group">
+		    	<label class="control-label" for="inputPassword">Período</label>
+		    	<div class="controls">
+		    		<select class="span2">
+						<option value="1990">1990</option>
+					</select>
+					 <small>até</small> 
+					<select class="span2">
+						<option value="1990">1990</option>
+					</select>
+		    	</div>
+		    </div>
+		    <div class="control-group">
+			    <div class="controls">
+				    <!-- <label class="checkbox">
+				    	<input type="checkbox"> Remember me
+				    </label> -->
+			    	<button type="submit" class="btn btn-primary btn-large"><i class="icon-ok icon-white"> </i> Enviar</button>
+			    	&nbsp;&nbsp;
+			    	<button type="button" class="btn"><i class="icon-trash"> </i> Limpar</button>
+		    	</div>
+	    	</div>
+		</fieldset>
+    </form>
+	</div>
+
+{% endblock %}
