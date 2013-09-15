@@ -1,18 +1,12 @@
 from django.conf.urls import patterns, include, url
-from busca.views import home, busca
+from busca.views import HomeView, BuscaView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', home, name='home'),
-    url(r'^busca/$', busca, name='busca'),
-    # url(r'^search_college/', include('search_college.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^busca/$', BuscaView.as_view(), name='busca'),
     url(r'^admin/', include(admin.site.urls)),
 )
