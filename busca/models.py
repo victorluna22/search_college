@@ -8,9 +8,8 @@ class Relatorio(models.Model):
 	de = models.IntegerField()
 	ate = models.IntegerField()
 	data = models.DateTimeField(auto_now=True)
-	url = models.URLField(max_length=255)
-	status = models.BooleanField(default=False)
-	arquivo = models.FileField(upload_to='arquivos', null=True, blank=True)
+	status_crowler = models.BooleanField(default=False)
+	status_busca = models.BooleanField(default=False)
 
 	def __unicode__(self):
 		return self.nome

@@ -25,3 +25,7 @@ class BuscaView(TemplateView):
 			context = {'success': True}
 			context['form'] = RelatorioForm()
 		return self.render_to_response(context)
+
+
+def resultado(request, id_relatorio):
+	return render(request, '%s/index.html' % id_relatorio, {})
