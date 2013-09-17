@@ -10,6 +10,7 @@ class Relatorio(models.Model):
 	data = models.DateTimeField(auto_now=True)
 	status_crowler = models.BooleanField(default=False)
 	status_busca = models.BooleanField(default=False)
+	status_email = models.BooleanField(default=False)
 
 	def __unicode__(self):
 		return self.nome

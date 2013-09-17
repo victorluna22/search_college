@@ -45,3 +45,13 @@
 	display: inline;
 	margin: 0 20%;
 }
+
+.thumbnail p {
+	font-size: 14px;
+    line-height: 27px;
+    padding: 15px;
+}
+
+.thumbnails li {
+	margin-right: 70px;
+}
