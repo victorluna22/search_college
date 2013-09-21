@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from BeautifulSoup import BeautifulSoup
+from django.conf import settings
 import mechanize
 import urllib
 import re, os
@@ -15,7 +16,7 @@ def start_crowler(id_relatorio, universidade):
 	contador = 1
 	soup = BeautifulSoup(html)
 	lista = soup.find('div', attrs={"class" : 'resultado'}).findAll('li')
-	path_file = '/home/victor/media/search_college/crowler/%d.txt' % id_relatorio
+	path_file = settings.MEDIA_ROOT + 'crowler/%d.txt' % id_relatorio
 	arquivo = open(path_file, 'w')
 	for pessoa in lista:
 		print contador
@@ -58,9 +59,9 @@ def start_crowler(id_relatorio, universidade):
 
 
 def create_file_conf(id_relatorio, path_result_crowler, de, ate):
-	arquivo_base = open('/home/victor/media/search_college/conf/config_base.txt', 'r')
-	arquivo_configuracao = open('/home/victor/media/search_college/conf/%d.txt' % id_relatorio, 'w')
-	path = "/home/victor/media/search_college/result/%d/" % id_relatorio
+	arquivo_base = open(settings.MEDIA_ROOT + 'conf/config_base.txt', 'r')
+	arquivo_configuracao = open(settings.MEDIA_ROOT + 'conf/%d.txt' % id_relatorio, 'w')
+	path = settings.MEDIA_ROOT + "result/%d/" % id_relatorio
 	os.mkdir( path, 0777 );
 	for linha in arquivo_base.readlines():
 		linha = linha.replace('{{PATH_LIST}}', path_result_crowler).replace('{{PATH_RESULT}}', path).replace('{{DE}}',str(de)).replace('{{ATE}}', str(ate))

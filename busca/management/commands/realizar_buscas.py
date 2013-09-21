@@ -1,6 +1,7 @@
 #! -*- coding:utf-8 -*-
 from django.core.management.base import CommandError, BaseCommand
 from busca.models import Relatorio
+from django.conf import settings
 import subprocess     
 import os
 
@@ -9,9 +10,15 @@ class Command(BaseCommand):
 
 	def handle(self, *args, **options):
 		relatorios = Relatorio.objects.filter(status_crowler=True, status_busca=False)
-		os.chdir("/home/victor/projetos/scriptLattesV8.08/")
+		if settings.DEBUG:
+			os.chdir("/home/victor/projetos/scriptLattesV8.08/")
+		else:
+			os.chdir("/home/ubuntu/scriptLattesV8.08/")
 		for relatorio in relatorios:
-			process = subprocess.Popen(['./scriptLattes.py', '/home/victor/media/search_college/conf/%s.txt' % relatorio.id])
+			if settings.DEBUG:
+				process = subprocess.Popen(['./scriptLattes.py', '/home/victor/media/search_college/conf/%s.txt' % relatorio.id])
+			else:
+				process = subprocess.Popen(['./scriptLattes.py', '/home/ubuntu/media/search_college/conf/%s.txt' % relatorio.id])
 			relatorio.status_busca = True
 			relatorio.save()
 
