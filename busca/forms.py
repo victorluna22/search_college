@@ -26,7 +26,7 @@ class RelatorioForm(forms.ModelForm):
 
     class Meta:
         model = Relatorio
-        exclude = ['status_crowler', 'status_busca']
+        exclude = ['status_crowler', 'status_busca', 'status_email']
 
     # def save(self, commit=True):
     #     return super(RelatorioForm, self).save(commit=commit)
