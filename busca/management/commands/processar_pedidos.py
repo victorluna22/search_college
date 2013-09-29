@@ -11,9 +11,9 @@ class Command(BaseCommand):
 		relatorios = Relatorio.objects.filter(status_crowler=False)
 		for relatorio in relatorios:
 			# add.delay(relatorio.id, relatorio.universidade, relatorio.de, relatorio.ate)
-			path_result_crowler = start_crowler(id_relatorio, universidade)
-			path_result_conf = create_file_conf(id_relatorio, path_result_crowler, de, ate)
-			relatorio = Relatorio.objects.get(id=id_relatorio)
+			path_result_crowler = start_crowler(relatorio.id, relatorio.universidade)
+			path_result_conf = create_file_conf(relatorio.id, path_result_crowler, relatorio.de, relatorio.ate)
+			relatorio = Relatorio.objects.get(id=relatorio.id)
 			if relatorio:
 				relatorio.status_crowler = True
 				relatorio.save()
