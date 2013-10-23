@@ -20,6 +20,15 @@ DATABASES = {
     }
 }
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST_USER = 'AKIAINRQDONQLOYHRABA'
+EMAIL_HOST_PASSWORD = 'AnjzT2FimXLVBV2kTSFzDlhADHdYuZqzAhVBX/SakJia'
+EMAIL_PORT = 587
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+ABSOLUTE_URL = 'http://ec2-50-19-197-154.compute-1.amazonaws.com/'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
