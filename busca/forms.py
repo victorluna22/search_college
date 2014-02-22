@@ -21,6 +21,7 @@ class RelatorioForm(forms.ModelForm):
                         widget=forms.TextInput(attrs={
                                             'class':'span6',
                                             'placeholder': 'Ex. UFPE'}))
+
     de = forms.ChoiceField(widget=Select, choices=YEAR_CHOICES)
     ate = forms.ChoiceField(widget=Select, choices=YEAR_CHOICES)
 

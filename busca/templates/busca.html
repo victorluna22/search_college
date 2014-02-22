@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-
+{%if ja_existe %}
+<script type="text/javascript">
+	window.location = "http://localhost/{{id_relatorio}}"
+</script>
+{%endif%}
 
 	<div class="hero-unit" style="margin-bottom:0px">
 		<div class="page-header">
@@ -91,7 +95,7 @@
 						<option value="2008">2013</option>
 					</select>
 		    	</div>
-		    </div>
+		    	</div>
 	    	{% endcomment %}
 		    <div class="control-group">
 			    <div class="controls">
